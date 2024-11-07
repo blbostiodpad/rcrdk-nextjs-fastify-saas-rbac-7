@@ -48,13 +48,13 @@ export function SignUpForm() {
 
 				<FormGroup>
 					<Label htmlFor="name">Name</Label>
-					<Input name="name" type="text" id="name" />
+					<Input name="name" type="text" id="name" autoComplete="name" />
 					<FormError message={errors?.name} />
 				</FormGroup>
 
 				<FormGroup>
 					<Label htmlFor="email">E-mail</Label>
-					<Input name="email" type="email" id="email" />
+					<Input name="email" type="email" id="email" autoComplete="email" />
 					<FormError message={errors?.email} />
 				</FormGroup>
 
@@ -62,6 +62,11 @@ export function SignUpForm() {
 					<Label htmlFor="password">Password</Label>
 					<div className="relative">
 						<Input
+							name="password"
+							type={showPassword ? 'text' : 'password'}
+							id="password"
+							autoComplete="new-password"
+						/>
 							name="password"
 							type={showPassword ? 'text' : 'password'}
 							id="password"
@@ -84,6 +89,11 @@ export function SignUpForm() {
 				<FormGroup>
 					<Label htmlFor="password_confirmation">Confirm your password</Label>
 					<Input
+						name="password_confirmation"
+						type="password"
+						id="password_confirmation"
+						autoComplete="new-password"
+					/>
 						name="password_confirmation"
 						type="password"
 						id="password_confirmation"
